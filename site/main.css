@@ -1,0 +1,7 @@
+input {
+    break-after:always;
+}
+
+table {
+    border: solid 1px;
+}

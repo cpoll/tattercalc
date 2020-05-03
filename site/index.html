@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <script src='formulas.js'></script>
+        <script src='main.js'></script>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+
+
+    <body>
+        <h1>Tattercalc</h1>
+
+        <form onsubmit="calculate(event)">
+
+            <label for='stat_STR'>STR</label>
+            <input id='stat_STR' name='STR' type=number value=14 min=1 max=30>
+
+            <label for='stat_DEX'>DEX</label>
+            <input id='stat_DEX' name='DEX' type=number value=14 min=1 max=30>
+
+            <label for='stat_WIS'>WIS</label>
+            <input id='stat_WIS' name='WIS' type=number value=14 min=1 max=30>
+
+            <label for='stat_ARC'>ARC</label>
+            <input id='stat_ARC' name='ARC' type=number value=14 min=1 max=30>
+
+            <br/>
+
+            <label for='stat_CRIT'>CRIT</label>
+            <input id='stat_CRIT' name='CRIT' type=number value=1 min=0 max=20>
+
+            <br/>
+
+            <label for='stat_WEAPON_DIE'>Weapon Die</label>
+            <input id='stat_WEAPON_DIE' name='WEAPON_DIE' type=number value=10 min=0 max=30>
+
+            <label for='stat_WEAPON_HIT_BONUS'>Weapon Hit Bonus</label>
+            <input id='stat_WEAPON_HIT_BONUS' name='WEAPON_HIT_BONUS' type=number value=0 min=-30 max=30>
+
+            <label for='stat_WEAPON_DAMAGE_BONUS'>Weapon Damage Bonus</label>
+            <input id='stat_WEAPON_DAMAGE_BONUS' name='WEAPON_DAMAGE_BONUS' type=number value=0 min=-30 max=30>
+
+            <br/>
+
+            <label for='stat_DEFENDER_AC'>Defender's AC</label>
+            <input id='stat_DEFENDER_AC' name='DEFENDER_AC' type=number value=0 min=-30 max=30>
+
+            <br/>
+
+            <label for='stat_SIM_ITERATIONS'>Simulation Iterations</label>
+            <input id='stat_SIM_ITERATIONS' name='SIM_ITERATIONS' type=number value=1000 min=1 max=1000000>
+
+            <br/>
+
+            <input type="submit" name='Submit'>
+        </form>
+
+        <div id='calc_output'></div>
+
+    </body>
+
+</html>
