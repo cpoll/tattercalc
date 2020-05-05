@@ -1,7 +1,9 @@
+"use strict";
+
 function json_to_table(json) {
     const table = document.createElement('table');
 
-    for([k, v] of Object.entries(json)){
+    for(let [k, v] of Object.entries(json)){
         const tr = document.createElement('tr');
         table.appendChild(tr);
 
@@ -30,7 +32,7 @@ function calculate(event){
     // Grab the form data
     const formData = new FormData(event.target);
     const stats = {}
-    for ([k, v] of formData.entries()) {
+    for (let [k, v] of formData.entries()) {
         stats[k] = Number(v);
     }
     console.log(stats);
@@ -42,12 +44,11 @@ function calculate(event){
     // Add calculated fields
     add_calculated_fields(stats);
 
-    // Calculate damage
+    // Calculate stuff
     output_element.appendChild(json_to_table(simulate_damage(stats)));
-
-    // Calculate damage taken
-    //output_element.appendChild(calculate_damage_taken(stats));
-
+    output_element.appendChild(json_to_table(simulate_damage_taken_attacking(stats)));
+    output_element.appendChild(json_to_table(simulate_damage_taken_shielding(stats)));
+    output_element.appendChild(json_to_table(simulate_damage_taken_passively(stats)));
 
 
     // Add stats to output
