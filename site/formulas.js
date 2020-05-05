@@ -76,7 +76,7 @@ function calculate_damage_taken_at_resist_phase(stats) {
     }
 
     // Check if we take damage
-    if (resist_roll > stats['RESIST']) {
+    if (resist_roll > stats['RESIST'] - stats['ATTACKER_BONUS']) {
         damage += 1;
     }
 
@@ -109,7 +109,7 @@ function calculate_damage_taken_shielding(stats) {
     if (reflex_roll === 20) {
         return calculate_damage_taken_at_resist_phase(stats) + calculate_damage_taken_at_resist_phase(stats);
     }
-    else if(reflex_roll <= stats['REFLEX']){
+    else if(reflex_roll <= stats['REFLEX'] - stats['ATTACKER_BONUS']){
         // If we reflex dodge, we don't take damage
         return 0;
     }
@@ -127,7 +127,7 @@ function calculate_damage_taken_passively(stats) {
     if (reflex_roll === 20) {
         return calculate_damage_taken_at_resist_phase(stats) + calculate_damage_taken_at_resist_phase(stats);
     }
-    else if(reflex_roll <= stats['REFLEX']){
+    else if(reflex_roll <= stats['REFLEX'] - stats['ATTACKER_BONUS']){
         // If we reflex dodge, we don't take damage
         return 0;
     }
