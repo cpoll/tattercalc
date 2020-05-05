@@ -143,8 +143,8 @@ function simulate_damage_taken_attacking(stats) {
     }
 
     return {
-        'Average Damage Taken': damage / stats['SIM_ITERATIONS'],
-        'Damage Taken': damage,
+        'Average Damage Taken (Attacking)': damage / stats['SIM_ITERATIONS'],
+        'Damage Taken (Attacking)': damage,
     }
 }
 
